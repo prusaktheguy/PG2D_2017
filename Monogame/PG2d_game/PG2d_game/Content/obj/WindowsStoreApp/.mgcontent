@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>WindowsStoreApp</Platform>
+  <Config />
+  <SourceFiles>
+    <File>K:/Other/code/PG2d_game/PG2d_game/Content/chrono_pipeline.png</File>
+    <File>K:/Other/code/PG2d_game/PG2d_game/Content/magus_small.png</File>
+  </SourceFiles>
+</SourceFileCollection>

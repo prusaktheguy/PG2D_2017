@@ -1,0 +1,2 @@
+C:\Kody\PG2D\DXTK\DirectXTK\DirectXTK_Windows10.vcxproj;arm
+C:\Kody\PG2D\DXTK\SimpleSampleWindows10\DirectXTKSimpleSample.vcxproj;arm
