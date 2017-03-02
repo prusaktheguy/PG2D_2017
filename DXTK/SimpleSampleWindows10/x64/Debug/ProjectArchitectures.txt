@@ -1,2 +1,0 @@
-C:\Kody\PG2D\DXTK\DirectXTK\DirectXTK_Windows10.vcxproj;x64
-C:\Kody\PG2D\DXTK\SimpleSampleWindows10\DirectXTKSimpleSample.vcxproj;x64
