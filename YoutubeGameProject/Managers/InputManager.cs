@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YoutubeGameProject {
+namespace JrpgProject {
     public class InputManager {
         private Dictionary<Input, InputData> state;
         public Dictionary<Keys, Input> KeyBindingsKeyboard;

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YoutubeGameProject {
+namespace JrpgProject {
     public class SoundManager {
         private Dictionary<string, SoundFX> settings { get; set; }
         private Dictionary<string, SoundEffect> soundEffects { get; set; }

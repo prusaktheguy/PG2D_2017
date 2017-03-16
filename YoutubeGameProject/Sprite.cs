@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YoutubeGameProject {
+namespace JrpgProject {
     public class Sprite {
 
         protected float scalingFactor = 1.0f;

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YoutubeGameProject {
+namespace JrpgProject {
     public class FramedSprite : Sprite {
         private int framesX;
         private int framesY;

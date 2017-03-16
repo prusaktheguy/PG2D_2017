@@ -1,4 +1,4 @@
-﻿namespace YoutubeGameProject {
+﻿namespace JrpgProject {
     public struct SoundFX {
         public string Key { get; set; }
         public string Filename { get; set; }

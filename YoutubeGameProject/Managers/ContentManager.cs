@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YoutubeGameProject {
+namespace JrpgProject {
     public class ContentManager {
         private GraphicsDevice graphicsDevice;
         public GraphicsDevice GraphicsDevice {

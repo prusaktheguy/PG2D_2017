@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace YoutubeGameProject {
+namespace JrpgProject {
 #if WINDOWS || LINUX
     /// <summary>
     /// The main class.

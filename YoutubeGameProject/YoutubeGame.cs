@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
-namespace YoutubeGameProject {
+namespace JrpgProject {
     public class YoutubeGame : Game {
 
         private static YoutubeGame instance;

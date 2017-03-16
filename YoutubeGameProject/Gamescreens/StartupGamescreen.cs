@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
 
-namespace YoutubeGameProject {
+namespace JrpgProject {
     public class StartupGamescreen : Gamescreen {
         Texture2D spaceIslandTexture;
         Sprite tinyMaleSprite;
