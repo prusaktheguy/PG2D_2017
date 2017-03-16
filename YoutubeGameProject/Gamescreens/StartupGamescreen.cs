@@ -18,6 +18,9 @@ namespace JrpgProject {
         Sprite backgroundTexture_TileOne;
         Sprite backgroungTexture_TileTwo;
         private bool isCollision = false;
+        private bool isRotation = false;
+        private float RotationAngle;
+
 
         public StartupGamescreen() {
         }
@@ -80,15 +83,23 @@ namespace JrpgProject {
 
             if (YoutubeGame.Instance.InputManager[Input.Up].IsHeld) {
                 tinyMaleSprite.SetPosition(tinyMaleSprite.Position.X, tinyMaleSprite.Position.Y - 200 * pGameTime.ElapsedGameTime.Milliseconds / 1000f);
+
             }
             if (YoutubeGame.Instance.InputManager[Input.Down].IsHeld) {
                 tinyMaleSprite.SetPosition(tinyMaleSprite.Position.X, tinyMaleSprite.Position.Y + 200 * pGameTime.ElapsedGameTime.Milliseconds / 1000f);
+
             }
             if (YoutubeGame.Instance.InputManager[Input.Left].IsHeld) {
                 tinyMaleSprite.SetPosition(tinyMaleSprite.Position.X - 200 * pGameTime.ElapsedGameTime.Milliseconds / 1000f, tinyMaleSprite.Position.Y);
+
             }
             if (YoutubeGame.Instance.InputManager[Input.Right].IsHeld) {
                 tinyMaleSprite.SetPosition(tinyMaleSprite.Position.X + 200 * pGameTime.ElapsedGameTime.Milliseconds / 1000f, tinyMaleSprite.Position.Y);
+                float elapsed = (float)pGameTime.ElapsedGameTime.TotalSeconds;
+                RotationAngle += elapsed;
+                float circle = MathHelper.Pi * 2;
+                RotationAngle = RotationAngle % circle;
+                isRotation = true;
             }
 
             tinyMaleSprite.Update(pGameTime);
@@ -98,9 +109,20 @@ namespace JrpgProject {
 
             //Check collisions - simple
             isCollision = false;
-            if(tinyMaleSprite.CollisionBox.Contains(evilTinyMaleSprite.CollisionBox) == ContainmentType.Intersects)
+            if (isRotation)
             {
-                isCollision = true;
+                if (tinyMaleSprite.CollisionShpere.Contains(evilTinyMaleSprite.CollisionBox) == ContainmentType.Intersects)
+                {
+                    isCollision = true;
+                }
+            }
+            else
+            {
+                if (tinyMaleSprite.CollisionBox.Contains(evilTinyMaleSprite.CollisionBox) == ContainmentType.Intersects)
+                {
+                    isCollision = true;
+                }
+
             }
 
         }
@@ -116,7 +138,13 @@ namespace JrpgProject {
                 backgroungTexture_TileTwo.Draw(pSpriteBatch);
 
                 pSpriteBatch.Draw(spaceIslandTexture, Vector2.Zero, Color.White);
-                tinyMaleSprite.Draw(pSpriteBatch, 4f);
+                //if (isRotation)
+                //{
+                    tinyMaleSprite.Rotate(pSpriteBatch, RotationAngle);
+                //}
+                //else { 
+                //tinyMaleSprite.Draw(pSpriteBatch, 4f);
+                //}
                 evilTinyMaleSprite.Draw(pSpriteBatch, 4f);
                 //smallFont.DrawString(pSpriteBatch, "Hello World!", new Vector2(20, 20), 8f);
                 smallFont.DrawString(pSpriteBatch, (isCollision == true) ? "Do not touch me" : "Hello world" , new Vector2(20, 20), 8f);
