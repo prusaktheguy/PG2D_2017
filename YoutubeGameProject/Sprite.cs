@@ -136,12 +136,12 @@ namespace JrpgProject {
 
         private void UpdateBoundingSphere()
         {
-            center = new Vector2((position.X + (texture.Width * scalingFactor)) / 2, (position.Y + (texture.Height * scalingFactor)) / 2);
+            center = new Vector2(((position.X + (texture.Width * scalingFactor))) / 2, (position.Y + (texture.Height * scalingFactor)) / 2);
 
             //polowa przekatnej
             radius = Convert.ToSingle(Math.Sqrt(Math.Pow(texture.Height*scalingFactor,2) + Math.Pow(texture.Width * scalingFactor, 2)))/2;
 
-            boundingsphere = new BoundingSphere(new Vector3(origin, 0), radius * scalingFactor);
+            boundingsphere = new BoundingSphere(new Vector3(center, 0), radius);
         }
         private void UpdateBoundingBox()
         {
@@ -151,7 +151,7 @@ namespace JrpgProject {
 
         }
 
-        public virtual void Rotate(SpriteBatch pSpriteBatch,float rotation)
+        public virtual void Rotate(SpriteBatch pSpriteBatch,float rotation,float pScale = 1f)
         {
             isRotated = true;
             origin = new Vector2(texture.Width / 2, texture.Height / 2);
@@ -162,6 +162,8 @@ namespace JrpgProject {
 
 
         public virtual void Draw(SpriteBatch pSpriteBatch, float pScale = 1f) {
+            isRotated = false;
+
             pSpriteBatch.Draw(texture, position, null, null, null, 0, new Vector2(scalingFactor, scalingFactor), tint, SpriteEffects.None, 0);
         }
     }
